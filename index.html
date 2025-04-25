@@ -11,7 +11,7 @@
 		sessionStorage.run = 1;
 		var md = decodeURIComponent(window.location.hash.substring(1));
 
-		var regex = /(?<!\\)\[(.*?)(?<!\\)\]/g;
+		var regex = /(?<!\\)\((.*?)(?<!\\)\)/g;
 		for (let match; (match = regex.exec(md)) !== null; ) {
 			const url = match[1];
 			window.open(url, "_blank");

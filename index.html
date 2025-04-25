@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>markdown-url-explode</title>
+	<script>
+	void function run() {
+		var md = decodeURIComponent(window.location.hash.substring(1));
+
+		var regex = /(?<!\\)\[(.*?)(?<!\\)\]/g;
+		for (let match; (match = regex.exec(md)) !== null; ) {
+			const url = match[1];
+			window.open(url, "_blank");
+		}
+
+		window.close();
+	}();
+	</script>
+</head>
+</html>

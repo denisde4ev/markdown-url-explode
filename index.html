@@ -8,8 +8,13 @@
 			document.write('already executed once.'); // todo: add btn to run anyway
 			return;
 		}
-		sessionStorage.run = 1;
+		
 		var md = decodeURIComponent(window.location.hash.substring(1));
+		if (!(1 < md.length)) {
+			document.write('nothing to run, add markdown url to the hash in this pages\'s url');
+			return;
+		}
+		sessionStorage.run = 1;
 
 		var regex = /(?<!\\)\((.*?)(?<!\\)\)/g;
 		for (let match; (match = regex.exec(md)) !== null; ) {

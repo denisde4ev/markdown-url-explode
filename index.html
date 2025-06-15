@@ -4,6 +4,8 @@
 	<title>markdown-url-explode</title>
 	<script>
 	void function run() {
+		// TODO:!!! what if hash changed
+		// what if user tryes to reload page to open again, better add button to open again, instead of resnponding with just ~"no"
 		if (sessionStorage.run) {
 			document.write('already executed once.'); // todo: add btn to run anyway
 			return;
